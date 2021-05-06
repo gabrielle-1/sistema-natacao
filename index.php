@@ -1,50 +1,30 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Formulário para inscrição de competidores</title>
 
-    $categorias = [];
-    $categorias[] = 'Infantil';
-    $categorias[] = 'Adolescente';
-    $categorias[] = 'Adulto';
-    $categorias[] = 'Idoso';
+    <style> 
+        form{
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form action="script.php" method='POST' class="form-inline">
+        <div class="form-group">
+            <label for="">Seu nome: </label><input type="text" id="nome" name="nome" class="form-control">
+        
+        <div class="form-group">
+            <label for="">Sua idade: </label><input type="text" name="idade" class="form-control">
+        </div> 
 
-    $nome_nadador = 'Gabrielle';
-    $idade_nadador = 18;
-
-    if($idade_nadador < 6){
-    }
-    else if ($idade_nadador >= 6 && $idade_nadador <=12) {
-        for($i=0; $i< count($categorias); $i++){
-            if($categorias[$i] == 'Infantil'){
-                echo "O(a) nadador(a) ".$nome_nadador." compete na Categoria Infantil";?> <br> 
-    <?php
-        }}
-    }
-    else if (($idade_nadador >= 13) && ($idade_nadador <18)) {
-        for($i=0; $i< count($categorias); $i++){
-            if($categorias[$i] == 'Adolescente'){
-                echo "O(a) nadador(a) ".$nome_nadador." compete na Categoria Adolescente";?> <br> 
-    <?php
-        }}
-    }
-    else if ($idade_nadador >= 18) {
-        for($i=0; $i< count($categorias); $i++){
-            if($categorias[$i] == 'Adulto'){
-                echo "O(a) nadador(a) ".$nome_nadador." compete na Categoria Adulto";?> <br> 
-    <?php
-        }}
-    }
-
-    //echo $categoria;
-    
-    /*ordenar a lista
-    sort($categorias); */
-
-    //mostrar a lista
-    print_r($categorias);
-
-    //mostra a 
-    var_dump($nome_nadador);
-    var_dump($idade_nadador);
-   
-
-
-?>
+            <input type="submit" id="bt" value="Enviar" class="btn btn-success">
+        </div>
+    </form>
+</body>
+</html>
