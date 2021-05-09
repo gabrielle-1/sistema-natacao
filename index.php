@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +18,17 @@
 </head>
 <body>
     <form action="script.php" method='POST' class="form-inline">
+        <?php 
+            $mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso'])? $_SESSION['mensagem-de-sucesso'] : '';
+            if(!empty($mensagemDeSucesso)){
+                echo $_SESSION['mensagem-de-sucesso'];
+            }
+            
+            $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : ''; 
+            if(!empty($mensagemDeErro)){
+                echo $_SESSION['mensagem-de-erro'];
+            }
+        ?>
         <div class="form-group">
             <label for="">Seu nome: </label><input type="text" id="nome" name="nome" class="form-control">
         
